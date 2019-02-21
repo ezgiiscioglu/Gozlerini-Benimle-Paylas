@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="196dp"
+        android:layout_height="262dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="105dp"
+
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="115dp"
+        android:src="@drawable/user1" />
+    <Button
+        android:id="@+id/btnHesapOlustur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgUser"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="35dp"
+
+        android:text="Hesap Oluştur" />
+
+    <Button
+        android:id="@+id/btnOturumAc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnHesapOlustur"
+
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:text="Oturum Aç" />
+
+
 
 </RelativeLayout>
