@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+>
     <TextView
         android:id="@+id/txtAd"
         android:layout_width="66dp"
@@ -95,9 +95,9 @@
         android:layout_alignStart="@+id/etAd"
         android:layout_alignLeft="@+id/etAd"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="316dp"
         android:text="Şifre :"
         android:textSize="20dp" />
 
@@ -108,9 +108,9 @@
         android:layout_alignStart="@+id/etAd"
         android:layout_alignLeft="@+id/etAd"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="167dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="268dp"
         android:background="#11000000"
         android:ems="10"
         android:inputType="textPersonName"

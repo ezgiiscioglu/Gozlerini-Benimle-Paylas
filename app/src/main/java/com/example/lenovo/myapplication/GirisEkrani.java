@@ -17,6 +17,7 @@ public class GirisEkrani extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.giris_ekrani);
+
         gonulluGiris=(Button)findViewById(R.id.gonulluGiris);
         gormeEngelliGiris=(Button)findViewById(R.id.btnHesapOlustur);
 

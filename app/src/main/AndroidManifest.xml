@@ -12,7 +12,7 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
-            <activity android:name=".GirisEkrani">
+        <activity android:name=".GirisEkrani">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,10 @@
         <activity android:name=".KayitOlActivity" />
         <activity android:name=".OturumAcActivity" />
         <activity android:name=".GonulluAnaEkrani" />
-        <activity android:name=".GormeEngelliAnaEkrani" />
+        <activity android:name=".GormeEngelliAnaEkrani"/>
+        <activity android:name=".GonulluKullaniciEkrani" />
+        <activity android:name=".GormeEngelliKullaniciEkrani" />
+
     </application>
 
 </manifest>

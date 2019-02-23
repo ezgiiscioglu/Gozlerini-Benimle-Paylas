@@ -17,13 +17,15 @@ public class OturumAcActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oturum);
+
         etEmail= (EditText) findViewById(R.id.etEmail);
         etSifre= (EditText) findViewById(R.id.etSifre);
         btnOturumAc= (Button) findViewById(R.id.btnOturumAc) ;
+
         btnOturumAc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(OturumAcActivity.this,MainActivity.class);
+                Intent intent=new Intent(OturumAcActivity.this,GonulluKullaniciEkrani.class);
                 startActivity(intent);
             }
         });

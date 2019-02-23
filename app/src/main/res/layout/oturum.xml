@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient">
@@ -37,9 +38,9 @@
         android:layout_alignStart="@+id/etEmail"
         android:layout_alignLeft="@+id/etEmail"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="231dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginBottom="311dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_pass"
         android:ems="10"
@@ -56,9 +57,9 @@
         android:layout_alignStart="@+id/etEmail"
         android:layout_alignLeft="@+id/etEmail"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginLeft="-2dp"
-        android:layout_marginBottom="186dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginBottom="249dp"
         android:buttonTint="@color/colorWhite"
         android:text="Beni Hatırla"
         android:textColor="@color/colorWhite" />
