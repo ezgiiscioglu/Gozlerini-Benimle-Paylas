@@ -20,13 +20,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".KayitOlActivity" />
-        <activity android:name=".OturumAcActivity" />
-        <activity android:name=".GonulluAnaEkrani" />
-        <activity android:name=".GormeEngelliAnaEkrani"/>
-        <activity android:name=".GonulluKullaniciEkrani" />
-        <activity android:name=".GormeEngelliKullaniciEkrani" />
-
+        <activity android:name=".KayitOlActivity"
+            android:label="Kayıt Ol"/>
+        <activity android:name=".OturumAcActivity"
+            android:label="Oturum Aç"/>
+        <activity android:name=".GonulluAnaEkrani"
+            android:label="Gönüllü Ana Ekranı" />
+        <activity android:name=".GormeEngelliAnaEkrani"
+            android:label="Görme Engelli Ana Ekranı" />
+        <activity android:name=".GonulluKullaniciEkrani"
+            android:label="Gönüllü Kullanıcı Ekranı" />
+        <activity android:name=".GormeEngelliKullaniciEkrani"
+            android:label="Görme Engelli Kullanıcı Ekranı" />
+        <activity android:name=".AyarlarEkrani"
+            android:label="Ayarlar"/>
     </application>
 
 </manifest>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/txtProfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="13dp"
+        android:text="Profil :"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnKisiselDetaylar"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="45dp"
+        android:text="Kişisel Detaylar"
+        android:drawableLeft="@drawable/ic_action_pass"
+        android:textAllCaps="false"
+        android:textSize="17dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        />
+
+    <TextView
+        android:id="@+id/txtIletisimeGec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtProfil"
+        android:layout_alignLeft="@+id/txtProfil"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="104dp"
+        android:text="Bizimle İletişime Geçin :"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtProfil"
+        android:layout_alignRight="@+id/txtProfil"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="-292dp"
+        android:layout_marginRight="-292dp"
+        android:text="Facebook"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnTwitter"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFacebook"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-4dp"
+        android:text="Twitter"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnInstagram"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnTwitter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-3dp"
+        android:text="Instagram"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/txtGelistiriciler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtProfil"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="207dp"
+        android:text="Gelistiriciler :"
+        android:textSize="17dp"
+        android:layout_alignLeft="@+id/txtProfil"
+        android:layout_marginLeft="0dp"
+        />
+
+    <Button
+        android:id="@+id/btnBetulLinkedin"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="146dp"
+        android:text="Betül SAKARYA"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnCansuLinkedin"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBetulLinkedin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="-146dp"
+        android:text="Cansu ATALAY"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnEzgiLinkedin"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCansuLinkedin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:text="Ayşe Ezgi İŞÇİOĞLU"
+        android:textAllCaps="false"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/btnCikis"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="Çıkış Yap"
+        android:textSize="17dp" />
+
+</RelativeLayout>

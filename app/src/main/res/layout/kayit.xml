@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
->
+    android:background="@drawable/gradient">
+
     <TextView
         android:id="@+id/txtAd"
         android:layout_width="66dp"
@@ -39,9 +40,9 @@
         android:layout_alignStart="@+id/etAd"
         android:layout_alignLeft="@+id/etAd"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-3dp"
-        android:layout_marginLeft="-3dp"
-        android:layout_marginTop="147dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="137dp"
         android:text="Soyadınız :"
         android:textSize="20dp" />
 
@@ -52,9 +53,9 @@
         android:layout_alignStart="@+id/txtAd"
         android:layout_alignLeft="@+id/txtAd"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginTop="166dp"
         android:background="#11000000"
         android:ems="10"
         android:inputType="textPersonName"
@@ -69,7 +70,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="237dp"
+        android:layout_marginTop="216dp"
         android:text="Email :"
         android:textSize="20dp" />
 
@@ -80,7 +81,7 @@
         android:layout_below="@+id/txtEmail"
         android:layout_alignEnd="@+id/etAd"
         android:layout_alignRight="@+id/etAd"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="-1dp"
         android:layout_marginRight="-1dp"
         android:background="#11000000"
@@ -95,9 +96,9 @@
         android:layout_alignStart="@+id/etAd"
         android:layout_alignLeft="@+id/etAd"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="316dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginBottom="183dp"
         android:text="Şifre :"
         android:textSize="20dp" />
 
@@ -108,9 +109,9 @@
         android:layout_alignStart="@+id/etAd"
         android:layout_alignLeft="@+id/etAd"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="268dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginBottom="151dp"
         android:background="#11000000"
         android:ems="10"
         android:inputType="textPersonName"
@@ -122,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/etAd"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="73dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="84dp"
         android:text="Kayıt Ol" />
 </RelativeLayout>

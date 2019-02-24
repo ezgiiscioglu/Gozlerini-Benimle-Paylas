@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.Button;
 
 public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
-    Button btngormeengelli;
+    Button btngormengelli;
 
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gorme_engelli_kullanici_ekran);
 
-        btngormeengelli = (Button) findViewById(R.id.btngormeengelli);
+        btngormengelli = (Button) findViewById(R.id.btngormengelli);
 
-        btngormeengelli.setOnClickListener(new View.OnClickListener() {
+        btngormengelli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(GormeEngelliKullaniciEkrani.this,MainActivity.class);
