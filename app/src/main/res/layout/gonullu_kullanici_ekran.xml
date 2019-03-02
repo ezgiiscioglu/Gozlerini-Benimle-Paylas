@@ -77,7 +77,7 @@
                 app:srcCompat="@drawable/resim" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/txtGormeEngelli"
                 android:layout_width="142dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -103,7 +103,7 @@
                 android:textSize="17dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtAciklama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -116,10 +116,10 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txtGormeEngelliSayisi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/textView3"
+                android:layout_alignTop="@+id/txtAciklama"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"

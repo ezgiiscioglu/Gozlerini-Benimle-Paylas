@@ -33,7 +33,11 @@
         <activity android:name=".GormeEngelliKullaniciEkrani"
             android:label="Görme Engelli Kullanıcı Ekranı" />
         <activity android:name=".AyarlarEkrani"
-            android:label="Ayarlar"/>
+        android:label="Ayarlar"/>
+        <activity android:name=".ProfilDuzenlemeEkrani"
+            android:label="Profili Düzenle"/>
+        <activity android:name=".deneme"
+            android:label="Linear Layout Deneme"/>
     </application>
 
 </manifest>

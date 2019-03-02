@@ -35,15 +35,14 @@
         android:id="@+id/etSifre"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/etEmail"
-        android:layout_alignLeft="@+id/etEmail"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="203dp"
+
+        android:layout_marginLeft="32dp"
+        android:layout_alignTop="@id/etEmail"
+        android:layout_marginTop="50dp"
+
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_pass"
-        android:ems="10"
+
         android:hint="Şifre"
         android:inputType="textPersonName"
         android:textColor="@color/colorWhite"
@@ -72,5 +71,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="105dp"
-        android:text="Oturum Aç" />
+        android:text="Oturum Aç"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_marginRight="10dp" />
 </RelativeLayout>

@@ -31,6 +31,14 @@ public class AyarlarEkrani extends AppCompatActivity {
         btnEzgiLinkedin=(Button) findViewById(R.id.btnEzgiLinkedin);
         btnCikis=(Button) findViewById(R.id.btnCikis);
 
+        btnKisiselDetaylar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(AyarlarEkrani.this,ProfilDuzenlemeEkrani.class);
+                startActivity(intent);
+            }
+        });
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +47,6 @@ public class AyarlarEkrani extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         btnTwitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

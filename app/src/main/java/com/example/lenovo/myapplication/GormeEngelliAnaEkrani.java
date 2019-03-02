@@ -16,7 +16,7 @@ public class GormeEngelliAnaEkrani extends AppCompatActivity {
         setContentView(R.layout.gorme_engelli_ana_ekran);
 
 
-        btnHesapOlustur = (Button) findViewById(R.id.btnHesapOlustur);
+        btnHesapOlustur = (Button) findViewById(R.id.btnGormeEngelliGiris);
         btnOturumAc = (Button) findViewById(R.id.btnOturumAc);
         imgUser = (ImageView) findViewById(R.id.imgUser);
         imgUser.setImageResource(R.drawable.user1);

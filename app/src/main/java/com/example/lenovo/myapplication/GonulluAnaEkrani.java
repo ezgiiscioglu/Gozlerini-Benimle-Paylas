@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +17,7 @@ public class GonulluAnaEkrani extends AppCompatActivity  {
 
 
 
-        btnHesapOlustur = (Button) findViewById(R.id.btnHesapOlustur);
+        btnHesapOlustur = (Button) findViewById(R.id.btnGormeEngelliGiris);
         btnOturumAc = (Button) findViewById(R.id.btnOturumAc);
         imgUser = (ImageView) findViewById(R.id.imgUser);
         imgUser.setImageResource(R.drawable.user1);
