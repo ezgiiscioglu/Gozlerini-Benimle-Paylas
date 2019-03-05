@@ -1,58 +1,27 @@
 {
   "project_info": {
-    "project_number": "405706772728",
-    "firebase_url": "https://mainactivity-ced0d.firebaseio.com",
-    "project_id": "mainactivity-ced0d",
-    "storage_bucket": "mainactivity-ced0d.appspot.com"
+    "project_number": "837761539058",
+    "firebase_url": "https://androidapp-b3cf1.firebaseio.com",
+    "project_id": "androidapp-b3cf1",
+    "storage_bucket": "androidapp-b3cf1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:405706772728:android:56b8209dd6aa0e1d",
+        "mobilesdk_app_id": "1:837761539058:android:56b8209dd6aa0e1d",
         "android_client_info": {
           "package_name": "com.example.lenovo.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "405706772728-s0oqg2gtma6fol8ae056cvgecu91fl2l.apps.googleusercontent.com",
+          "client_id": "837761539058-t1ekhfutg4oh5mq8nmv6v5hmed6ibdur.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD_aFZ4j_w7GDFQnS6_QLiBFLxRekBQTlU"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:405706772728:android:09a0bace5f177835",
-        "android_client_info": {
-          "package_name": "www.cansuatalay.com.myapplication"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "405706772728-s0oqg2gtma6fol8ae056cvgecu91fl2l.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD_aFZ4j_w7GDFQnS6_QLiBFLxRekBQTlU"
+          "current_key": "AIzaSyCXZf0p7vI8O72Nqb4ENxbOiuipJ89l_Lk"
         }
       ],
       "services": {

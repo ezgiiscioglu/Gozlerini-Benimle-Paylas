@@ -86,7 +86,8 @@
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/button_shape"
                 android:layout_marginTop="20dp"
-                android:onClick="KayitOlKor"/>
+                android:onClick="KayitOlGormeEngelli"
+                />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
