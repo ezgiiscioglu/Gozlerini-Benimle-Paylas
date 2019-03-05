@@ -19,7 +19,7 @@ public class GirisEkrani extends AppCompatActivity {
         setContentView(R.layout.giris_ekrani);
 
         btnGonulluGiris=(Button)findViewById(R.id.btnGonulluGiris);
-        btnGormeEngelliGiris=(Button)findViewById(R.id.btnGormeEngelliGiris);
+        btnGormeEngelliGiris=(Button)findViewById(R.id.btnHesapOlustur);
 
         imageView=(ImageView)findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.resim);

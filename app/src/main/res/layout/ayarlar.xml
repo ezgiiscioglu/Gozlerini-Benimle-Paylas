@@ -1,161 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="392dp"
+        android:layout_height="433dp"
 
-    <TextView
-        android:id="@+id/txtProfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="13dp"
-        android:text="Profil :"
-        android:textSize="17dp" />
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
 
-    <Button
-        android:id="@+id/btnKisiselDetaylar"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="45dp"
-        android:text="Kişisel Detaylar"
-        android:drawableLeft="@drawable/ic_action_pass"
-        android:textAllCaps="false"
-        android:textSize="17dp"
-        android:visibility="visible"
-        tools:visibility="visible"
-        />
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="8dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="20dp"
+        card_view:layout_constraintBottom_toTopOf="@+id/btnCikis"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/txtIletisimeGec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtProfil"
-        android:layout_alignLeft="@+id/txtProfil"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="104dp"
-        android:text="Bizimle İletişime Geçin :"
-        android:textSize="17dp" />
+        <LinearLayout
+            android:layout_width="341dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
 
-    <Button
-        android:id="@+id/btnFacebook"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtProfil"
-        android:layout_alignRight="@+id/txtProfil"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="-292dp"
-        android:layout_marginRight="-292dp"
-        android:text="Facebook"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+            android:layout_marginRight="25dp"
 
-    <Button
-        android:id="@+id/btnTwitter"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnFacebook"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-4dp"
-        android:text="Twitter"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnInstagram"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnTwitter"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-3dp"
-        android:text="Instagram"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_txtProfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txtGelistiriciler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtProfil"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="207dp"
-        android:text="Gelistiriciler :"
-        android:textSize="17dp"
-        android:layout_alignLeft="@+id/txtProfil"
-        android:layout_marginLeft="0dp"
-        />
+                <EditText
+                    android:id="@+id/txtProfil"
+                    android:layout_width="67dp"
+                    android:layout_height="40dp"
+                    android:singleLine="true"
+                    android:text="Profil :" />
+            </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnBetulLinkedin"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="146dp"
-        android:text="Betül SAKARYA"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnKisiselDetaylar"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Kişisel Detaylar"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:visibility="visible"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
-    <Button
-        android:id="@+id/btnCansuLinkedin"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnBetulLinkedin"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="-146dp"
-        android:text="Cansu ATALAY"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_txtIletisimeGec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnEzgiLinkedin"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCansuLinkedin"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:text="Ayşe Ezgi İŞÇİOĞLU"
-        android:textAllCaps="false"
-        android:textSize="17dp" />
+                <EditText
+                    android:id="@+id/txtIletisimeGec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bizimle İletişime Geçin :" />
 
-    <Button
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnFacebook"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Facebook"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnTwitter"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Twitter"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnInstagram"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Instagram"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_txtGelistiriciler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtGelistiriciler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Geliştiriciler :" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnBetulLinkedin"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Betül SAKARYA"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnCansuLinkedin"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Cansu ATALAY"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btnEzgiLinkedin"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorWhite"
+                android:text="Ayşe Ezgi İŞÇİOĞLU"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.button.MaterialButton
         android:id="@+id/btnCikis"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp"
+        android:layout_width="234dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
+        android:layout_marginBottom="28dp"
         android:text="Çıkış Yap"
-        android:textSize="17dp" />
-
-</RelativeLayout>
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

@@ -1,170 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:layout_height="match_parent" >
 
-
-    <Button
-        android:id="@+id/btnAnasayfa"
-        android:layout_width="197dp"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="0dp"
-        android:width="204dp"
-        android:text="ANASAYFA" />
-
-    <Button
-        android:id="@+id/btnAyarlar"
-        android:layout_width="194dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:width="204dp"
-        android:text="AYARLAR"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="0dp" />
 
 
     <RelativeLayout
 
-        xmlns:android="http://schemas.android.com/apk/res/android"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/relativeLayout"
+        android:layout_width="343dp"
+        android:layout_height="287dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/kenarlik"
+        app:layout_constraintBottom_toTopOf="@+id/txtAciklama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-
-            xmlns:android="http://schemas.android.com/apk/res/android"
-
-            android:layout_width="343dp"
-
-            android:layout_height="287dp"
-
-            android:layout_alignParentTop="true"
-
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/kenarlik"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="250dp"
-                android:layout_height="167dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="43dp"
-                android:layout_marginLeft="43dp"
-                android:layout_marginTop="12dp"
-                app:srcCompat="@drawable/resim" />
-
-            <TextView
-                android:id="@+id/txtGormeEngelli"
-                android:layout_width="142dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="29dp"
-                android:layout_marginLeft="29dp"
-                android:layout_marginBottom="25dp"
-                android:text="Görme Engelliler"
-                android:textSize="17dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="213dp"
-                android:layout_marginLeft="213dp"
-                android:layout_marginBottom="26dp"
-                android:text="Gönüllüler"
-                android:textSize="17dp" />
-
-            <TextView
-                android:id="@+id/txtAciklama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="72dp"
-                android:layout_marginLeft="72dp"
-                android:layout_marginBottom="78dp"
-                android:text="1000"
-                android:textSize="16dp" />
-
-            <TextView
-                android:id="@+id/txtGormeEngelliSayisi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/txtAciklama"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="77dp"
-                android:layout_marginRight="77dp"
-                android:text="1000"
-                android:textSize="16dp" />
-        </RelativeLayout>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="96dp"
-
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="250dp"
+            android:layout_height="167dp"
             android:layout_alignParentStart="true"
-
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/resim" />
 
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="340dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/kenarlik"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtGormeEngelli"
+            android:layout_width="142dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginBottom="25dp"
+            android:text="Görme Engelliler"
+            android:textSize="17dp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="Gozlerini Benimle Paylas görme engelli bireyler için geliştirilmiş bir sosyal yardım platformudur."
-                android:textSize="17dp"></TextView>
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/txtGonullu"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="207dp"
+            android:layout_marginLeft="207dp"
+            android:layout_marginBottom="25dp"
+            android:text="Gönüllüler"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/txtGonulluSayisi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtGonullu"
+            android:layout_alignTop="@+id/txtGonullu"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-37dp"
+            android:layout_marginRight="81dp"
+            android:layout_marginBottom="14dp"
+            android:text="1000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/txtGormeEngelliSayisi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtGormeEngelli"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginRight="118dp"
+            android:layout_marginBottom="14dp"
+            android:layout_toStartOf="@+id/txtGonulluSayisi"
+            android:layout_toLeftOf="@+id/txtGonulluSayisi"
+            android:text="1000"
+            android:textSize="16dp" />
 
     </RelativeLayout>
-    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txtAciklama"
+        android:layout_width="0dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/kenarlik"
+        android:padding="15dp"
+        android:text="Gozlerini Benimle Paylas görme engelli bireyler için geliştirilmiş bir sosyal yardım platformudur."
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAnasayfa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"></TextView>
+
+    <Button
+        android:id="@+id/btnAnasayfa"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+      android:layout_marginStart="15dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+
+        android:width="204dp"
+        android:text="ANASAYFA"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnAyarlar"
+        app:layout_constraintEnd_toStartOf="@+id/btnAyarlar"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnAyarlar"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="12dp"
+
+
+        android:width="204dp"
+        android:text="AYARLAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAnasayfa" />
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -8,27 +8,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
-public class OturumAcActivity extends AppCompatActivity {
-    Button btnOturumAc;
-    EditText etEmail,etSifre;
-    ImageView imageView;
+public class KayitOlGonullu extends AppCompatActivity {
+    EditText etAd,etSoyad,etEmail,etSifre;
+    Button btnKayitOl;
     Context context;
-    @Override
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.oturum);
-
+        setContentView(R.layout.kayit_ol_gonullu);
+        etAd= (EditText) findViewById(R.id.etAd);
+        etSoyad= (EditText) findViewById(R.id.etSoyad);
         etEmail= (EditText) findViewById(R.id.etEmail);
         etSifre= (EditText) findViewById(R.id.etSifre);
-        imageView=(ImageView)findViewById(R.id.imageView);
-        btnOturumAc= (Button) findViewById(R.id.btnOturumAc) ;
+        btnKayitOl= (Button) findViewById(R.id.btnKayitOl) ;
 
-        btnOturumAc.setOnClickListener(new View.OnClickListener() {
+        btnKayitOl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(OturumAcActivity.this,GonulluKullaniciEkrani.class);
+                Intent intent=new Intent(KayitOlGonullu.this,OturumAcGonullu.class);
                 startActivity(intent);
             }
         });

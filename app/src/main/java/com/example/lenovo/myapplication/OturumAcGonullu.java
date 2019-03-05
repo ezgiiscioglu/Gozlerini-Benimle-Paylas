@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-public class OturumAcActivity extends AppCompatActivity {
+public class OturumAcGonullu extends AppCompatActivity {
     Button btnOturumAc;
     EditText etEmail,etSifre;
     ImageView imageView;
@@ -18,7 +18,7 @@ public class OturumAcActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.oturum);
+        setContentView(R.layout.oturum_ac_gonullu);
 
         etEmail= (EditText) findViewById(R.id.etEmail);
         etSifre= (EditText) findViewById(R.id.etSifre);
@@ -28,7 +28,7 @@ public class OturumAcActivity extends AppCompatActivity {
         btnOturumAc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(OturumAcActivity.this,GonulluKullaniciEkrani.class);
+                Intent intent=new Intent(OturumAcGonullu.this,GonulluKullaniciEkrani.class);
                 startActivity(intent);
             }
         });

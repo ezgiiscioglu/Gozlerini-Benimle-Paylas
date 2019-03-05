@@ -1,7 +1,6 @@
 package com.example.lenovo.myapplication;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +29,7 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(), "Yazılacak Mesaj", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Güncelleme Başarılı", Toast.LENGTH_LONG).show();
 
             }
         });

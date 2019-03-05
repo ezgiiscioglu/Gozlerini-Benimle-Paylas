@@ -16,7 +16,7 @@ public class KayitOlActivity extends AppCompatActivity {
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kayit);
+        setContentView(R.layout.kayit_ol_gonullu);
         etAd= (EditText) findViewById(R.id.etAd);
         etSoyad= (EditText) findViewById(R.id.etSoyad);
         etEmail= (EditText) findViewById(R.id.etEmail);

@@ -19,10 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".KayitOlActivity"
+        <activity android:name=".KayitOlGonullu"
             android:label="Kayıt Ol"/>
+        <activity android:name=".KayitOlGormeEngelli"
+            android:label="Kayıt Ol"/>
+        <activity android:name=".KayitOlActivity"
+            android:label="Kayit Ol"/>
         <activity android:name=".OturumAcActivity"
+            android:label="Oturum Aç"/>
+        <activity android:name=".OturumAcGonullu"
+            android:label="Oturum Aç"/>
+        <activity android:name=".OturumAcGormeEngelli"
             android:label="Oturum Aç"/>
         <activity android:name=".GonulluAnaEkrani"
             android:label="Gönüllü Ana Ekranı" />
@@ -36,8 +43,7 @@
         android:label="Ayarlar"/>
         <activity android:name=".ProfilDuzenlemeEkrani"
             android:label="Profili Düzenle"/>
-        <activity android:name=".deneme"
-            android:label="Linear Layout Deneme"/>
+
     </application>
 
 </manifest>

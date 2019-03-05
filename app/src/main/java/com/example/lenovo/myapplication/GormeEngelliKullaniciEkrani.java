@@ -6,22 +6,22 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
-    Button btngormengelli;
+    Button btnAramaBaslat;
 
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gorme_engelli_kullanici_ekran);
 
-        btngormengelli = (Button) findViewById(R.id.btngormengelli);
+        btnAramaBaslat = (Button) findViewById(R.id.btnAramaBaslat);
 
-        btngormengelli.setOnClickListener(new View.OnClickListener() {
+        btnAramaBaslat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(GormeEngelliKullaniciEkrani.this,MainActivity.class);
-                startActivity(i);
+                Toast.makeText(GormeEngelliKullaniciEkrani.this, "Arama Başlatılıyor.", Toast.LENGTH_SHORT).show();
             }
         });
     }
