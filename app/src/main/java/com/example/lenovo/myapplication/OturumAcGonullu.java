@@ -24,6 +24,7 @@ public class OturumAcGonullu extends AppCompatActivity {
     EditText etEmail,etSifre;
     ImageView imageView;
     Context context;
+    
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
