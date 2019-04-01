@@ -70,6 +70,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"
                 android:text="Profili Güncelle"
+                android:textAllCaps="false"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </android.support.v7.widget.CardView>

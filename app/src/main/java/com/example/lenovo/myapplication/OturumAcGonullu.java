@@ -1,15 +1,18 @@
 package com.example.lenovo.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,7 +27,7 @@ public class OturumAcGonullu extends AppCompatActivity {
     EditText etEmail,etSifre;
     ImageView imageView;
     Context context;
-    
+    ProgressDialog oturumProgress;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,30 +36,54 @@ public class OturumAcGonullu extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.etEmail);
         etSifre = findViewById(R.id.etSifre);
-
-
         imageView=(ImageView)findViewById(R.id.imageView);
         btnOturumAc= (Button) findViewById(R.id.btnOturumAc) ;
-    }
-
-    public void OturumAcGonullu(View view) {
-        mAuth.signInWithEmailAndPassword(etEmail.getText().toString(), etSifre.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Intent intent = new Intent(OturumAcGonullu.this, GonulluKullaniciEkrani.class);
-                            startActivity(intent);
+        oturumProgress=new ProgressDialog(this);
 
 
-                        }
-                    }
-                }).addOnFailureListener(this, new OnFailureListener() {
+        btnOturumAc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(@NonNull Exception e) {
+            public void onClick(View v) {
+                String email=etEmail.getText().toString();
+                String sifre=etSifre.getText().toString();
+                if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(sifre)){
+                    oturumProgress.setTitle("Oturum Açılıyor");
+                    oturumProgress.setMessage("Hesabınıza giriş yapılıyor.Lütfen bekleyiniz.");
+                    oturumProgress.setCanceledOnTouchOutside(false);
+                    oturumProgress.show();
+
+                    gonulluOturum(email,sifre);
+
+                }
+                else{
+                    Toast.makeText(OturumAcGonullu.this, "Lütfen tüm alanları doldurunuz.", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });
+    }
+
+    private void gonulluOturum(String email, String sifre) {
+             mAuth.signInWithEmailAndPassword(email,sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    @Override
+    public void onComplete(@NonNull Task<AuthResult> task) {
+             if(task.isSuccessful()){
+                 oturumProgress.dismiss();
+                 Intent i=new Intent(OturumAcGonullu.this,GonulluKullaniciEkrani.class);
+
+                 // kullanici Id sini putExtra ile sayfalarca tasıyarak yapabilirsin.
+
+                 startActivity(i);
+
+             }else{
+                 oturumProgress.dismiss();
+                 Toast.makeText(OturumAcGonullu.this,"Giriş yapılamadı.Email ve şifrenizi kontrol ediniz.",Toast.LENGTH_SHORT).show();
+             }
 
     }
+});
+    }
+
+
 }

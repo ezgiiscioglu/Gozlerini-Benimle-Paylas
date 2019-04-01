@@ -1,11 +1,13 @@
 package com.example.lenovo.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,44 +18,91 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import java.util.HashMap;
 
 public class KayitOlGormeEngelli extends AppCompatActivity {
     private FirebaseAuth mAuth;
-
-    EditText etEmail;
-    EditText etSifre;
-
-    EditText etAd,etSoyad;
+private DatabaseReference mDatabase;
+    EditText etAd,etSoyad,etEmail,etSifre;
     Button btnKayitOl;
     Context context;
-
+    ProgressDialog kayitProgress;
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kayit_ol_gorme_engelli);
+        setContentView(R.layout.kayit_ol_gonullu);
 
         mAuth = FirebaseAuth.getInstance();
-        etEmail = findViewById(R.id.etEmail);
-        etSifre = findViewById(R.id.etSifre);
+        btnKayitOl=(Button)findViewById(R.id.btnKayitOl) ;
+        etAd=(EditText)findViewById(R.id.etAd);
+        etSoyad=(EditText)findViewById(R.id.etSoyad);
+        etEmail = (EditText)findViewById(R.id.etEmail);
+        etSifre = (EditText)findViewById(R.id.etSifre);
+        kayitProgress=new ProgressDialog(this);
 
-    }
-    public void KayitOlGormeEngelli(View view) {
-        mAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etSifre.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(KayitOlGormeEngelli.this, "Kayit Başarıyla Tamamlandı.", Toast.LENGTH_SHORT).show();
-                        Intent i=new Intent(KayitOlGormeEngelli.this,OturumAcGormeEngelli.class);
-                        startActivity(i);
-                    }
-
-                }).addOnFailureListener(this, new OnFailureListener() {
+        btnKayitOl.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(KayitOlGormeEngelli.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
+                String ad = etAd.getText().toString();
+                String soyad = etSoyad.getText().toString();
+                String email = etEmail.getText().toString();
+                String sifre = etSifre.getText().toString();
+
+                if (!TextUtils.isEmpty(ad) && !TextUtils.isEmpty(soyad) && !TextUtils.isEmpty(email)&& !TextUtils.isEmpty(sifre)) {
+
+                    kayitProgress.setTitle("Kaydediliyor.");
+                    kayitProgress.setMessage("Hesabınız oluşturuluyor.Lütfen bekleyiniz.");
+                    kayitProgress.setCanceledOnTouchOutside(false);
+                    kayitProgress.show();
+
+                    gormeEngelliKayit(ad, soyad, email, sifre);
+
+                }
+                else{
+                    Toast.makeText(KayitOlGormeEngelli.this, "Lütfen tüm alanları doldurunuz.", Toast.LENGTH_SHORT).show();
+
+                }
+
             }
+
         });
     }
 
+    private void gormeEngelliKayit(final String ad,final String soyad,final String email, final String sifre) {
+        mAuth.createUserWithEmailAndPassword(email, sifre)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            String kullaniciId=mAuth.getCurrentUser().getUid();
+                            mDatabase=FirebaseDatabase.getInstance().getReference().child("GormeEngelliKullanicilar").child(kullaniciId);
+                            HashMap<String,String> userMap=new HashMap<>();
+                            userMap.put("ad" ,ad);
+                            userMap.put("soyad" ,soyad);
+                            userMap.put("email" ,email);
+                            userMap.put("sifre" ,sifre);
+                            mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful())
+                                    kayitProgress.dismiss();
+                                    Intent i = new Intent(KayitOlGormeEngelli.this, OturumAcGormeEngelli.class);
+                                    startActivity(i);
+                                }
+                            });
 
+                        } else {
+                            kayitProgress.dismiss();
+                            // mailde @ işareti yoksa ve şifre 6 karakter değilse meydana gelen hata
+                            Toast.makeText(KayitOlGormeEngelli.this, "Lütfen uygun formda email ve şifre giriniz.", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+    }
 
 }

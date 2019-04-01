@@ -71,8 +71,11 @@
                     android:id="@+id/etSifre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
                     android:layout_marginTop="20dp"
-                    android:hint="Şifreniz" />
+                    android:hint="Şifreniz (6 Karakter)"
+                    android:inputType="textPassword" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -81,13 +84,11 @@
                 android:id="@+id/btnKayitOl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kayıt Ol"
                 android:layout_gravity="center"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/button_shape"
                 android:layout_marginTop="20dp"
-                android:onClick="KayitOlGormeEngelli"
-                />
+                android:background="@drawable/button_shape"
+                android:text="Kayıt Ol"
+                android:textColor="@color/colorWhite" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

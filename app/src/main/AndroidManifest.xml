@@ -23,10 +23,6 @@
             android:label="Kayıt Ol"/>
         <activity android:name=".KayitOlGormeEngelli"
             android:label="Kayıt Ol"/>
-        <activity android:name=".KayitOlActivity"
-            android:label="Kayit Ol"/>
-        <activity android:name=".OturumAcActivity"
-            android:label="Oturum Aç"/>
         <activity android:name=".OturumAcGonullu"
             android:label="Oturum Aç"/>
         <activity android:name=".OturumAcGormeEngelli"
