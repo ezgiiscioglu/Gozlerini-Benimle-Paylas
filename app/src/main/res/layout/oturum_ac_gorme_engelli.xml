@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +27,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/profilResmi"
                 android:layout_width="120dp"
                 android:layout_height="150dp"
                 android:layout_alignParentTop="true"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="56dp"
                 app:srcCompat="@drawable/indir" />
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -48,9 +48,9 @@
                     android:drawableLeft="@drawable/ic_action_name"
                     android:hint="Email adresiniz" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_etSifre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -62,7 +62,7 @@
                     android:drawableLeft="@drawable/ic_action_pass"
                     android:hint="Şifreniz" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -72,7 +72,7 @@
                 android:text="Beni Hatırla"
                 android:layout_marginTop="10dp"/>
 
-            <android.support.design.button.MaterialButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnOturumAc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,6 +81,6 @@
                 android:text="Giriş Yap"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

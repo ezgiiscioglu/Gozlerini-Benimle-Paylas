@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +21,13 @@
             android:layout_marginRight="25dp"
             android:orientation="vertical">
 
-            <android.support.design.widget.TextInputLayout
+            <ImageView
+                android:id="@+id/profilResmi"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                tools:srcCompat="@drawable/login" />
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_etAd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -32,9 +39,9 @@
                     android:hint="Adınız"
                     android:layout_marginTop="20dp"/>
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_etSoyad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -46,9 +53,9 @@
                     android:hint="Soyadınız"
                     android:layout_marginTop="20dp"/>
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -60,9 +67,9 @@
                     android:hint="Email adresiniz"
                     android:layout_marginTop="20dp"/>
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.button.MaterialButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnProfiliGuncelle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,6 +80,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
-</android.support.constraint.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
