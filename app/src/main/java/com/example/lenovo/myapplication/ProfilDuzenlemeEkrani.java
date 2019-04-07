@@ -5,6 +5,8 @@ import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -47,10 +49,10 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
     Context context;
     private  FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-   private Uri imageUri=null;
-  private ProgressDialog profilProgress;
-  private StorageReference storageReference;
-private Boolean kontrol=false;
+    private Uri imageUri=null;
+    private ProgressDialog profilProgress;
+    private StorageReference storageReference;
+    private Boolean kontrol=false;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +97,7 @@ private Boolean kontrol=false;
     }
 })  ;
 
- /*       btnProfiliGuncelle.setOnClickListener(new View.OnClickListener() {
+      btnProfiliGuncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               String gonulluKullaniciAdi=etAd.getText().toString();
@@ -106,8 +108,8 @@ private Boolean kontrol=false;
 
               if( !TextUtils.isEmpty(gonulluKullaniciAdi) && imageUri!=null){
                  if(kontrol){     // Kırpma islemi gerceklesmis ise (   Imageview de kırpılmıs resim var ise ) calısır
-StorageReference kullaniciResim = storageReference.child("GonulluKullaniciResimleri").child(kullaniciId + ".jpg");
-kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {      // ImageUri yi kullaniciResim'e gönderme
+        StorageReference kullaniciResim = storageReference.child("GonulluKullaniciResimleri").child(kullaniciId + ".jpg");
+        kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {      // ImageUri yi kullaniciResim'e gönderme
     @Override
     public void onComplete(Task<UploadTask.TaskSnapshot> task) {
 
@@ -115,8 +117,10 @@ kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<Up
 
             final Uri download_uri;
             if(task !=  null){   // İçinde kırpılmıs resim degeri varsa
-            //    download_uri=task.getResult().getDownloadUrl();
-                download_uri=task.getResult().getDownloadUrl();
+
+                Bitmap bitmap=BitmapFactory.decodeFile(imageUri.getPath());
+                profilResmii.setImageBitmap(bitmap);
+                //download_uri=task.getResult().getDownloadUrl();
 
             }
             else {      // Yoksa default olarak sectiğim imageUri ' yi kullan
@@ -126,7 +130,7 @@ kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<Up
             userUpdateMap.put("ad",etAd.getText().toString());
             userUpdateMap.put("soyad",etSoyad.getText().toString());
             userUpdateMap.put("email",etEmail.getText().toString());
-            userUpdateMap.put("profilResmi",download_uri);
+           // userUpdateMap.put("profilResmi",download_uri);
 
 
             mDatabase.updateChildren(userUpdateMap).addOnCompleteListener(new OnCompleteListener() {
@@ -150,7 +154,7 @@ profilProgress.dismiss();
               }
             }
         });
-*/
+
   
       profilResmii.setOnClickListener(new View.OnClickListener() {
             @Override
