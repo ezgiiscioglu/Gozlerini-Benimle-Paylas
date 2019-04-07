@@ -5,13 +5,10 @@ import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +34,6 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import java.util.HashMap;
 import java.util.Map;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -51,19 +47,19 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
     Context context;
     private  FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private Uri imageUri=null;
-    private ProgressDialog profilProgress;
-    private StorageReference storageReference;
-    private Boolean kontrol=false;
+   private Uri imageUri=null;
+  private ProgressDialog profilProgress;
+  private StorageReference storageReference;
+private Boolean kontrol=false;
 
-         protected void onCreate(@Nullable Bundle savedInstanceState) {
-             super.onCreate(savedInstanceState);
-             setContentView(R.layout.profili_duzenle);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.profili_duzenle);
 
         etAd = (EditText) findViewById(R.id.etAd);
         etSoyad = (EditText) findViewById(R.id.etSoyad);
         etEmail = (EditText) findViewById(R.id.etEmail);
-        profilResmii=(ImageView)findViewById(R.id.profilResmi);
+       profilResmii=(ImageView)findViewById(R.id.profilResmi);
         btnProfiliGuncelle=(Button)findViewById(R.id.btnProfiliGuncelle);
         profilProgress=new ProgressDialog(this);
 
@@ -72,8 +68,8 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
         final String kullaniciId=mAuth.getCurrentUser().getUid();
         mDatabase=FirebaseDatabase.getInstance().getReference().child("GonulluKullanicilar").child(kullaniciId);  // Profili Düzenle Sayfası Sadece Gonullu Kullanıcı İçin var.
         mDatabase.addValueEventListener(new ValueEventListener() {  // Databaseden verileri dinleme metodu
-         @Override
-          public void onDataChange( DataSnapshot dataSnapshot) {
+    @Override
+    public void onDataChange( DataSnapshot dataSnapshot) {
 
         String gonulluAd=dataSnapshot.child("ad").getValue().toString();
         String gonulluSoyad=dataSnapshot.child("soyad").getValue().toString();
@@ -93,13 +89,13 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
 
     }
 
-         @Override
-         public void onCancelled( DatabaseError databaseError) {
+    @Override
+    public void onCancelled( DatabaseError databaseError) {
 
     }
 })  ;
 
-              btnProfiliGuncelle.setOnClickListener(new View.OnClickListener() {
+ /*       btnProfiliGuncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               String gonulluKullaniciAdi=etAd.getText().toString();
@@ -110,21 +106,17 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
 
               if( !TextUtils.isEmpty(gonulluKullaniciAdi) && imageUri!=null){
                  if(kontrol){     // Kırpma islemi gerceklesmis ise (   Imageview de kırpılmıs resim var ise ) calısır
-        StorageReference kullaniciResim = storageReference.child("GonulluKullaniciResimleri").child(kullaniciId + ".jpg");
+StorageReference kullaniciResim = storageReference.child("GonulluKullaniciResimleri").child(kullaniciId + ".jpg");
+kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {      // ImageUri yi kullaniciResim'e gönderme
+    @Override
+    public void onComplete(Task<UploadTask.TaskSnapshot> task) {
 
-        kullaniciResim.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {      // ImageUri yi kullaniciResim'e gönderme
-         @Override
-            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+        if (task.isSuccessful()) {
 
-              if (task.isSuccessful()) {
-
-                 final Uri download_uri;
-                 if(task !=  null){   // İçinde kırpılmıs resim degeri varsa
-
-                     Bitmap bitmap=BitmapFactory.decodeFile(imageUri.getPath());
-                     profilResmii.setImageBitmap(bitmap);
-
-                     //download_uri=task.getResult().getDownloadUrl();
+            final Uri download_uri;
+            if(task !=  null){   // İçinde kırpılmıs resim degeri varsa
+            //    download_uri=task.getResult().getDownloadUrl();
+                download_uri=task.getResult().getDownloadUrl();
 
             }
             else {      // Yoksa default olarak sectiğim imageUri ' yi kullan
@@ -134,19 +126,19 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
             userUpdateMap.put("ad",etAd.getText().toString());
             userUpdateMap.put("soyad",etSoyad.getText().toString());
             userUpdateMap.put("email",etEmail.getText().toString());
-          //  userUpdateMap.put("profilResmi",download_uri);
+            userUpdateMap.put("profilResmi",download_uri);
 
 
             mDatabase.updateChildren(userUpdateMap).addOnCompleteListener(new OnCompleteListener() {
                 @Override
                 public void onComplete(Task task) {
                     if (task.isSuccessful()) {
-                        profilProgress.dismiss();
+profilProgress.dismiss();
                         Toast.makeText(getApplicationContext(),"Güncelleme Başarı İle Tamamlandı.", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         profilProgress.dismiss();
-                        Toast.makeText(getApplicationContext(),"Hata:"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Hata Meydana Geldi.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -158,8 +150,8 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
               }
             }
         });
-
-                profilResmii.setOnClickListener(new View.OnClickListener() {
+*/
+      profilResmii.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ActivityCompat.requestPermissions(ProfilDuzenlemeEkrani.this, new String []{Manifest.permission.READ_EXTERNAL_STORAGE },1);
@@ -173,11 +165,9 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity {
 
     }
     @Override
-         public void onActivityResult(int requestCode, int resultCode, Intent data) {   // Kırpma işleminden sonra geri gelen kırpılmıs resmi yakalama kodu
-             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-
-                  CropImage.ActivityResult result = CropImage.getActivityResult(data);
-
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {   // Kırpma işleminden sonra geri gelen kırpılmıs resmi yakalama kodu
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                imageUri = result.getUri();     // kırpılmış resmi imageUri ye at
                 profilResmii.setImageURI(imageUri);
