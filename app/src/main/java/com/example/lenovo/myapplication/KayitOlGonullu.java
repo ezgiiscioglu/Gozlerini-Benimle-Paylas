@@ -25,10 +25,10 @@ import java.util.HashMap;
 
 public class KayitOlGonullu extends AppCompatActivity {
     private FirebaseAuth mAuth;
-private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase;
     EditText etAd,etSoyad,etEmail,etSifre;
     Button btnKayitOl;
-  //  ImageView profilResmi;
+    ImageView profilResmi;
     Context context;
     ProgressDialog kayitProgress;
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ private DatabaseReference mDatabase;
         etSoyad=(EditText)findViewById(R.id.etSoyad);
         etEmail = (EditText)findViewById(R.id.etEmail);
         etSifre = (EditText)findViewById(R.id.etSifre);
-   //    profilResmi=(ImageView)findViewById(R.id.profilResmi);
+        profilResmi=(ImageView)findViewById(R.id.profilResmi);
         kayitProgress=new ProgressDialog(this);
 
         btnKayitOl.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,6 @@ private DatabaseReference mDatabase;
                             userMap.put("soyad",soyad);
                             userMap.put("email",email);
                             userMap.put("sifre",sifre);
-                       //     userMap.put("profilResmi","profilResmi");
                             userMap.put("profilResmi","profil");
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {  // Değerleri veritabanına gönder
                                 @Override

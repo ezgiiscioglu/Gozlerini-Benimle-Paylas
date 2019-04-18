@@ -13,7 +13,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
 
-        android:layout_marginTop="0dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="8dp"
@@ -21,8 +20,10 @@
         card_view:cardElevation="20dp"
         card_view:layout_constraintBottom_toTopOf="@+id/btnCikis"
         card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintHorizontal_bias="0.529"
         card_view:layout_constraintStart_toStartOf="parent"
-        card_view:layout_constraintTop_toTopOf="parent">
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="341dp"
@@ -38,11 +39,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <TextView
                     android:id="@+id/txtProfil"
-                    android:layout_width="67dp"
-                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:singleLine="true"
+                    android:padding="10dp"
                     android:text="Profil :" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,24 +54,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Kişisel Detaylar"
                 android:textAllCaps="false"
                 android:textColor="@color/colorBlack"
-                android:visibility="visible"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:visibility="visible" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_txtIletisimeGec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <TextView
                     android:id="@+id/txtIletisimeGec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
                     android:text="Bizimle İletişime Geçin :" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -80,13 +83,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Facebook"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTwitter"
@@ -94,13 +97,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Twitter"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
 
             <com.google.android.material.button.MaterialButton
@@ -109,13 +112,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/button_shape"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Instagram"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -123,10 +126,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <TextView
                     android:id="@+id/txtGelistiriciler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
                     android:text="Geliştiriciler :" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -137,12 +141,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Betül SAKARYA"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
 
             <com.google.android.material.button.MaterialButton
@@ -151,12 +155,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Cansu ATALAY"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEzgiLinkedin"
@@ -164,12 +168,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:backgroundTint="@color/colorWhite"
                 android:text="Ayşe Ezgi İŞÇİOĞLU"
                 android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:textColor="@color/colorBlack" />
 
 
         </LinearLayout>

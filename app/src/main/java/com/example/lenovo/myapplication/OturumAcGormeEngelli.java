@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class OturumAcGormeEngelli extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -27,6 +33,7 @@ public class OturumAcGormeEngelli extends AppCompatActivity {
     ImageView imageView;
     Context context;
     ProgressDialog oturumProgress;
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,22 +70,57 @@ public class OturumAcGormeEngelli extends AppCompatActivity {
         });
     }
 
-    private void gormeEngelliOturum(String email, String sifre) {
+    private void gormeEngelliOturum( final String email, String sifre) {
         mAuth.signInWithEmailAndPassword(email,sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    oturumProgress.dismiss();
-                    Intent i=new Intent(OturumAcGormeEngelli.this,GormeEngelliKullaniciEkrani.class);
-                    startActivity(i);
+                    gormeEngelliKontrol(email);
 
-                }else{
+                } else{
                     oturumProgress.dismiss();
                     Toast.makeText(OturumAcGormeEngelli.this,"Giriş yapılamadı.Email ve şifrenizi kontrol ediniz.",Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+    }
+
+    private void gormeEngelliKontrol(final String kontrolEmail) {
+
+        try{
+            String kullaniciId=mAuth.getCurrentUser().getUid();  // Kullanicinin id sini getirme
+
+            mDatabase=FirebaseDatabase.getInstance().getReference().child("GormeEngelliKullanicilar").child(kullaniciId);
+
+            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    String email  = (String) dataSnapshot.child("email").getValue();
+
+                    if(email == null) {   // Gorme engelli tablosundan bir kullanıcı ise
+                        email = "";
+                        Toast.makeText(OturumAcGormeEngelli.this, "Bu sayfaya giriş izniniz bulunmamaktadır.", Toast.LENGTH_SHORT).show();
+                        oturumProgress.dismiss();
+                        return;
+                    }
+                    if (email.equals(kontrolEmail)) {
+                        Intent i = new Intent(getApplicationContext(), GormeEngelliKullaniciEkrani.class);
+                        startActivity(i);
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        } catch (Exception e){
+            Log.d("OturumAcGonullu", "Exception: " + e.getMessage());
+        }
+
     }
 
 
