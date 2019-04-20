@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class GirisEkrani extends AppCompatActivity {
     Button btnGonulluGiris,btnGormeEngelliGiris;
     TextView txtGormeEngelli, txtGonullu,txtAciklama,txtGormeEngelliSayisi,txtGonulluSayisi;

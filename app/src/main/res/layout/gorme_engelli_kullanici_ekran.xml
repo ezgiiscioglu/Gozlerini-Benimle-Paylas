@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnAramaBaslat"
+        android:id="@+id/btnVideoBaslat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="videoYukle"
+        android:text="Upload" />
+
+    <VideoView
+        android:id="@+id/video"
         android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:text="İlk Mevcut Görüntülüyü Ara" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="200dp" />
+
+    <Button
+        android:id="@+id/btnVideoServer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="videoServerYukle"
+        android:text="Upload to Server" />
+
+    <Button
+        android:id="@+id/btnDinle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sesi Dinle"
+        android:onClick="dinle"/>
+</LinearLayout>
 

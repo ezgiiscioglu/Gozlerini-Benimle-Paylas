@@ -7,31 +7,29 @@
 
     <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
-        android:layout_width="392dp"
-        android:layout_height="433dp"
+        android:layout_width="372dp"
+        android:layout_height="468dp"
 
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
 
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="20dp"
-        card_view:layout_constraintBottom_toTopOf="@+id/btnCikis"
+        card_view:layout_constraintBottom_toBottomOf="@+id/btnCikis"
         card_view:layout_constraintEnd_toEndOf="parent"
-        card_view:layout_constraintHorizontal_bias="0.529"
+        card_view:layout_constraintHorizontal_bias="0.333"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent"
         card_view:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="341dp"
+            android:layout_width="336dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-
-            android:layout_marginRight="25dp"
-
+            android:layout_marginLeft="15dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -43,25 +41,15 @@
                     android:id="@+id/txtProfil"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:singleLine="true"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:text="Profil :" />
-            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnKisiselDetaylar"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/button_shape"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Kişisel Detaylar"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack"
-                android:visibility="visible" />
+                <ListView
+                    android:id="@+id/liste1"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_txtIletisimeGec"
@@ -75,50 +63,12 @@
                     android:padding="10dp"
                     android:text="Bizimle İletişime Geçin :" />
 
+                <ListView
+                    android:id="@+id/liste2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFacebook"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/button_shape"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Facebook"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnTwitter"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/button_shape"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Twitter"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnInstagram"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/button_shape"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Instagram"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -133,65 +83,29 @@
                     android:padding="10dp"
                     android:text="Geliştiriciler :" />
 
+                <ListView
+                    android:id="@+id/liste3"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnBetulLinkedin"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Betül SAKARYA"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCansuLinkedin"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Cansu ATALAY"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEzgiLinkedin"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:backgroundTint="@color/colorWhite"
-                android:text="Ayşe Ezgi İŞÇİOĞLU"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlack" />
 
 
         </LinearLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCikis"
-        android:layout_width="234dp"
-        android:layout_height="61dp"
+        android:layout_width="214dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginStart="114dp"
-        android:layout_marginLeft="114dp"
-        android:layout_marginEnd="114dp"
-        android:layout_marginRight="114dp"
-        android:layout_marginBottom="28dp"
+
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
         android:text="Çıkış Yap"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/card_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

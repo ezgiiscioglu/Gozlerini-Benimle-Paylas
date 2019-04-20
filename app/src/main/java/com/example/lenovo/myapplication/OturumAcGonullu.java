@@ -106,7 +106,7 @@ public class OturumAcGonullu extends AppCompatActivity {
                         return;
                     }
                     if (email.equals(kontrolEmail)) {
-                        Intent i = new Intent(getApplicationContext(), GonulluKullaniciEkrani.class);
+                        Intent i = new Intent(getApplicationContext(), NavigationBar.class);
                         startActivity(i);
 
                     }

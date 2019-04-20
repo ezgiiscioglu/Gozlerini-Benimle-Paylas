@@ -2,41 +2,36 @@ package com.example.lenovo.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
-public class GonulluKullaniciEkrani extends AppCompatActivity {
-
-    Button btnAnasayfa,btnAyarlar;
+public class GonulluKullaniciEkrani extends Fragment {
 
 
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.gonullu_kullanici_ekran);
 
-        btnAnasayfa = (Button) findViewById(R.id.btnAnasayfa);
-        btnAyarlar = (Button) findViewById(R.id.btnAyarlar);
 
-        btnAnasayfa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(GonulluKullaniciEkrani.this,GonulluKullaniciEkrani.class);
-                startActivity(i);
-            }
-        });
-        btnAyarlar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(GonulluKullaniciEkrani.this,AyarlarEkrani.class);
-                startActivity(i);
-            }
-        });
-    }
+    public View onCreateView(@NonNull LayoutInflater inflater,  // Fragment dan extends ettiğimiz için OnCreateView metodu kullanılır.
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.gonullu_kullanici_ekran, container, false);
 
+
+        return  view;
 
     }
+
+}
+
+
+
 
 
 

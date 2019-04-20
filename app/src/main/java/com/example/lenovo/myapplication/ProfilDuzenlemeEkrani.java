@@ -128,7 +128,7 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
                         });
 
                     }
-                    else{  // Resme değişiklik olmadığında
+                    else{     // Profil düzenlemeden - Ayarlar a geçip tekrar Profiluzenleme yaptıgımızda veya sadece adsoyad guncellediğimizde
 
                         profilProgress.dismiss();
                         adSoyadGuncelle();
@@ -189,23 +189,8 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
             }
         });
 
-        //mDatabase.updateChildren(userUpdateMap).addOnCompleteListener(new OnCompleteListener() {
-        //    @Override
-        //    public void onComplete(Task task) {
-        //        if (task.isSuccessful()) {
-        //            profilProgress.dismiss();
-        //            Toast.makeText(getApplicationContext(), "Güncelleme Başarı İle Tamamlandı.", Toast.LENGTH_SHORT).show();
-        //        } else {
-        //            profilProgress.dismiss();
-        //            Toast.makeText(getApplicationContext(), "Hata Meydana Geldi.", Toast.LENGTH_SHORT).show();
-        //        }
-        //    }
-        //}).addOnFailureListener(ProfilDuzenlemeEkrani.this, new OnFailureListener() {
-        //    @Override
-        //    public void onFailure(@NonNull Exception e) {
-        //        Log.d("ProfilDuzenleme", "onFailure: " + e.getMessage());
-        //    }
-        //});
+
+
 
     }
 
