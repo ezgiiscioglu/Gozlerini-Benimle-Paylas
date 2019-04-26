@@ -256,7 +256,7 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
         imageUri = Uri.parse(profilResmi);
 
 
-        RequestOptions requestOptions = new RequestOptions();
+    RequestOptions requestOptions = new RequestOptions();
         requestOptions.placeholder(R.drawable.login);
         Glide.with(ProfilDuzenlemeEkrani.this).setDefaultRequestOptions(requestOptions).load(imageUri).into(profilResmii);
 

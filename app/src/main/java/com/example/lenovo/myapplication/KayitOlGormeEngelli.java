@@ -83,6 +83,7 @@ private DatabaseReference mDatabase;
                             userMap.put("soyad" ,soyad);
                             userMap.put("email" ,email);
                             userMap.put("sifre" ,sifre);
+                            userMap.put("video","defaultVideo");
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

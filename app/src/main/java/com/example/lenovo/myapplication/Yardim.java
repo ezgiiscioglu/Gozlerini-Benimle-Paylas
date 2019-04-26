@@ -1,3 +1,4 @@
+
 package com.example.lenovo.myapplication;
 
 import android.app.ProgressDialog;
@@ -39,7 +40,7 @@ public class Yardim extends Fragment {
     private StorageReference mStorage;
     private ProgressDialog mProgress;
     private MediaController mController;
-    private VideoView videoGoster;
+    private VideoView gelenVideo;
     private Uri videouri;
 
     public View onCreateView(@NonNull LayoutInflater inflater,  // Fragment dan extends ettiğimiz için OnCreateView metodu kullanılır.
@@ -52,87 +53,34 @@ public class Yardim extends Fragment {
         mikrofon = (Button) view.findViewById(R.id.mikrofon);
         mStorage = FirebaseStorage.getInstance().getReference();
         mProgress = new ProgressDialog(getContext());
-        videoGoster = (VideoView) view.findViewById(R.id.videoGoster);
+        gelenVideo = (VideoView) view.findViewById(R.id.videoGoster);
         videouri=Uri.parse("https://firebasestorage.googleapis.com/v0/b/androidapp-b3cf1.appspot.com/o/uploads%2Fvideos%2FVID-20190316-WA0003.mp4?alt=media&token=a853b4a6-1e43-43de-a184-a2130acdbf6c");
-        videoGoster.setVideoURI(videouri);
-        videoGoster.requestFocus();
+        gelenVideo.setVideoURI(videouri);
+        gelenVideo.requestFocus();
 
-        videoGoster.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        gelenVideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                     @Override
                     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                         mController = new MediaController(getContext());
-                        videoGoster.setMediaController(mController);
-                        mController.setAnchorView(videoGoster);
+                        gelenVideo.setMediaController(mController);
+                        mController.setAnchorView(gelenVideo);
                     }
                 });
             }
         });
-        videoGoster.start();
+        gelenVideo.start();
 
 
 
-        mFileName=Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName+="/record_audio.3gp";
 
-        mikrofon.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                    startRecording();
-                    Toast.makeText(getContext(),"Ses kaydı başladı...",Toast.LENGTH_LONG).show();
-                }
-                else if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
-                    stopRecording();
-                   Toast.makeText(getContext(),"Ses kaydı bitti...",Toast.LENGTH_LONG).show();
-                }
-                return false;
-            }
-        });
-return  view;
-    }
-    private void startRecording() {
-        mRecorder = new MediaRecorder();
-        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mRecorder.setOutputFile(mFileName);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-        try {
-            mRecorder.prepare();
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
-        }
-
-        mRecorder.start();
+        return  view;
     }
 
-    private void stopRecording() {
-        mRecorder.stop();
-        mRecorder.release();
-        mRecorder = null;
-
-        uploadAudio();
-    }
-    private void uploadAudio() {
-        mProgress.setMessage("Ses kaydı yükleniyor...");
-        mProgress.show();
-        StorageReference filePath =mStorage.child("Audio").child("new_audio.3gp");
-        Uri uri= Uri.fromFile(new File(mFileName));
-        filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                mProgress.dismiss();
-               Toast.makeText(getContext(),"Ses kaydı yüklendi...",Toast.LENGTH_LONG).show();
-
-            }
-        });
 
 
 
-
-
-    }
 }
+

@@ -1,7 +1,10 @@
 package com.example.lenovo.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -15,15 +18,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,15 +45,22 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
-public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
+public class GormeEngelliKullaniciEkrani extends AppCompatActivity  implements ValueEventListener {
     private Button btnVideoBaslat,btnVideoServer,btnDinle;
     private VideoView video;
     private static final int PICK_VIDEO_REQUEST=101;
     private Uri videouri;
     private MediaController mController;
-    private StorageReference mStorageRef;
-    private String videoname;
+    private StorageReference storageReference;
+
+    private FirebaseAuth mAuth;
+
+    private String kullaniciId;
+    private DatabaseReference mDatabase;
+
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +69,15 @@ public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
         btnVideoBaslat = (Button) findViewById(R.id.btnVideoBaslat);
         btnDinle=(Button) findViewById(R.id.btnDinle);
         btnVideoServer= (Button) findViewById(R.id.btnVideoServer);
-        mStorageRef=FirebaseStorage.getInstance().getReference("uploads").child("videos");
+
         video=(VideoView) findViewById(R.id.video);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        kullaniciId = mAuth.getCurrentUser().getUid();
+        storageReference=FirebaseStorage.getInstance().getReference();
+       mDatabase = FirebaseDatabase.getInstance().getReference().child("GormeEngelliKullanicilar").child(kullaniciId);
+        mDatabase.addValueEventListener(this);
 
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -74,44 +102,40 @@ public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
         if(requestCode==PICK_VIDEO_REQUEST && resultCode==RESULT_OK && data!=null) {
             videouri=data.getData();
             video.setVideoURI(videouri);
-            videoname=getFileName(videouri);
+
         }
     }
 
-    /* public void videoServerYukle(View view) {
-        mStorageRef.child(videoname).putFile(videouri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        mStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                Uri downloadUrl = uri;
-                                Toast.makeText(GormeEngelliKullaniciEkrani.this, "Video yüklendi"+downloadUrl.toString(),Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        Toast.makeText(GormeEngelliKullaniciEkrani.this, exception.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-    */
+
     public void videoServerYukle(View view) {
         if(videouri!=null) {
-            UploadTask uploadTask=mStorageRef.child(videoname).putFile(videouri);
-            uploadTask.addOnFailureListener(new OnFailureListener() {
+
+            final StorageReference kullaniciVideo = storageReference.child("GormeEngelliKullaniciVideolari").child(kullaniciId + ".mp4");
+            UploadTask task=kullaniciVideo.putFile(videouri);
+            Task<Uri> urlTask = task.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(GormeEngelliKullaniciEkrani.this, "Video yüklenemedi"+e.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+
+                        Toast.makeText(getApplicationContext(), "Task Basarılı Degil.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    return kullaniciVideo.getDownloadUrl();
                 }
-            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            }).addOnCompleteListener(GormeEngelliKullaniciEkrani.this, new OnCompleteListener<Uri>() {
                 @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(GormeEngelliKullaniciEkrani.this, "Video yüklendi",Toast.LENGTH_LONG).show();
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(getApplicationContext(), "Video Başarı İle Kaydedildi.", Toast.LENGTH_SHORT).show();
+
+                        Uri download_uri;
+
+                        video.setVideoPath(videouri.getPath());
+                        download_uri = task.getResult();
+
+                        uriGuncelle(download_uri);
+     }
                 }
             });
         }
@@ -120,6 +144,55 @@ public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
         }
     }
 
+    private void uriGuncelle(Uri download_uri) {
+
+        mDatabase.removeEventListener(this);   //  ??
+
+        Map<String, Object> userUpdateMap = new HashMap<>();
+
+        userUpdateMap.put("video", download_uri.toString());
+
+        if(mDatabase == null){
+            Log.d("GonulluKullaniciEkrani", "mDatabase null");
+            return;
+        }
+
+        mDatabase.updateChildren(userUpdateMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()) {
+
+
+                    Toast.makeText(getApplicationContext(), "Video Başarı İle Kaydedildi.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("GonulluKullaniciEkranie", "exception: " + e.getMessage());
+
+            }
+        });
+
+
+
+
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+        String profilResmi = dataSnapshot.child("video").getValue().toString();
+        videouri = Uri.parse(profilResmi);
+
+
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
     public void dinle(View view) {
         MediaPlayer mediaPlayer=new MediaPlayer();
         try {
@@ -138,11 +211,10 @@ public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
     public void videoYukle(View view) {
 
         Intent i =new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        //i.setType("video/*");
-        //i.setAction(Intent.ACTION_GET_CONTENT);
+
         i.putExtra(MediaStore.EXTRA_OUTPUT,videouri);
         startActivityForResult(i,PICK_VIDEO_REQUEST);
-        //Toast.makeText(GormeEngelliKullaniciEkrani.this, "Video seçiniz.", Toast.LENGTH_SHORT).show();
+
 
     }
     public String getFileName(Uri uri) {
@@ -167,4 +239,5 @@ public class GormeEngelliKullaniciEkrani extends AppCompatActivity {
         }
         return result;
     }
+
 }
