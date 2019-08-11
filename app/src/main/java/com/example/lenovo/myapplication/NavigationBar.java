@@ -1,27 +1,35 @@
 package com.example.lenovo.myapplication;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.lenovo.myapplication.AyarlarEkrani;
 import com.example.lenovo.myapplication.GonulluKullaniciEkrani;
 import com.example.lenovo.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 public class NavigationBar extends AppCompatActivity {
+
+    FirebaseAuth auth;
 
     BottomNavigationView navigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigationbar_page);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        auth=FirebaseAuth.getInstance();
 
         navigation=(BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(navigationTiklama);  //  Navigation daki  herhangi bir Item secildiğinde
@@ -59,4 +67,20 @@ public class NavigationBar extends AppCompatActivity {
                 }
             };
 
+    public void cikisyap(View view){
+
+        auth.getInstance().signOut();
+        Intent intent=new Intent(NavigationBar.this,GirisEkrani.class);
+        startActivity(intent);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), OturumAcGonullu.class);
+            NavUtils.navigateUpTo(this, intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

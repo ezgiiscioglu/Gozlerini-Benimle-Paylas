@@ -7,8 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.NavUtils;
+
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,16 +38,20 @@ public class OturumAcGormeEngelli extends AppCompatActivity {
     Context context;
     ProgressDialog oturumProgress;
     private DatabaseReference mDatabase;
+    CardView cardView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oturum_ac_gonullu);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.etEmail);
         etSifre = findViewById(R.id.etSifre);
         imageView=(ImageView)findViewById(R.id.profilResmi);
         btnOturumAc= (Button) findViewById(R.id.btnOturumAc) ;
+        cardView=(CardView) findViewById(R.id.card_view);
+        cardView.setBackgroundResource(R.drawable.purple);
         oturumProgress=new ProgressDialog(this);
 
 
@@ -106,7 +114,7 @@ public class OturumAcGormeEngelli extends AppCompatActivity {
                         return;
                     }
                     if (email.equals(kontrolEmail)) {
-                        Intent i = new Intent(getApplicationContext(), GormeEngelliKullaniciEkrani.class);
+                        Intent i = new Intent(getApplicationContext(), GormeEngelliKullanici.class);
                         startActivity(i);
 
                     }
@@ -122,6 +130,14 @@ public class OturumAcGormeEngelli extends AppCompatActivity {
         }
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), GormeEngelliAnaEkrani.class);
+            NavUtils.navigateUpTo(this, intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

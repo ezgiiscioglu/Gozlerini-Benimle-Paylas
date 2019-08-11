@@ -1,9 +1,27 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.lenovo.myapplication"
+        manifestPlaceholders = [
+                onesignal_app_id: '162b651d-d749-456f-b1ca-5c8be1d93f3c',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: '837761539058'
+        ]
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
@@ -27,6 +45,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
     implementation group: 'com.google.android.material', name: 'material', version: '1.1.0-alpha05'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
@@ -39,5 +59,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+
 }
 apply plugin: 'com.google.gms.google-services'

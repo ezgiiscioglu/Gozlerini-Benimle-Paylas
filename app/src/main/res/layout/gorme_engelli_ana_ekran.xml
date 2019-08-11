@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/purple">
 
     <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
@@ -21,20 +22,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imgUser"
-                android:layout_width="179dp"
-                android:layout_height="180dp"
+                android:layout_width="500dp"
+                android:layout_height="174dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="56dp"
-                android:src="@drawable/login" />
+                android:src="@drawable/gormeengelli" />
+
+            <TextView
+                android:id="@+id/yazig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:layout_marginTop="10dp"
+                android:text="Gözlerini Benimle Paylaş uygulaması sizi, görsel yardım gerektiren günlük işlerde yardımcı olacak bir gönüllüye ulaştırır."
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHesapOlustur"
@@ -43,6 +55,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_shape"
                 android:text="Hesap Oluştur"
+                android:textAllCaps="false"
                 android:textColor="@color/colorWhite" />
 
             <com.google.android.material.button.MaterialButton
@@ -52,6 +65,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_shape"
                 android:text="Oturum Aç"
+                android:textAllCaps="false"
                 android:textColor="@color/colorWhite" />
 
         </LinearLayout>

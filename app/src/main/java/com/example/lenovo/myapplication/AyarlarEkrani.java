@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 public class AyarlarEkrani extends Fragment {
     ListView listeBirDegiskeni,listeIkiDegiskeni,listeUcDegiskeni;
+
     String liste1[]={"                        Profil Ayarları "};
     String liste2[]={"                          Facebook ","                            Twitter ","                          Instagram "};
     String liste3[]={"                     Betül SAKARYA ","                      Cansu ATALAY ","                 Ayşe Ezgi İŞÇİOĞLU "};

@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +45,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NavUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -64,7 +66,7 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profili_duzenle);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         etAd = (EditText) findViewById(R.id.etAd);
         etSoyad = (EditText) findViewById(R.id.etSoyad);
         etEmail = (EditText) findViewById(R.id.etEmail);
@@ -257,7 +259,7 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
 
 
     RequestOptions requestOptions = new RequestOptions();
-        requestOptions.placeholder(R.drawable.login);
+        requestOptions.placeholder(R.drawable.indir);
         Glide.with(ProfilDuzenlemeEkrani.this).setDefaultRequestOptions(requestOptions).load(imageUri).into(profilResmii);
 
         etAd.setText(gonulluAd);
@@ -268,6 +270,15 @@ public class ProfilDuzenlemeEkrani extends AppCompatActivity implements ValueEve
     @Override
     public void onCancelled(@NonNull DatabaseError databaseError) {
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), NavigationBar.class);
+            NavUtils.navigateUpTo(this, intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

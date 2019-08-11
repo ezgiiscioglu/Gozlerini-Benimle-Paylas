@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/purple">
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="403dp"
+        android:layout_height="210dp" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+      <Button
+          android:id="@+id/videoKaydet"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:onClick="videoYukle"
+          android:text="Video Yükle"
+          android:textAllCaps="false"
+          android:textSize="20dp" />
+
+  </LinearLayout>
+
+
+</LinearLayout>

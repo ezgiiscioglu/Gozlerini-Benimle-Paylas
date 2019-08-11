@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/purple">
 
 
     <RelativeLayout
@@ -31,7 +32,7 @@
             android:layout_marginStart="31dp"
             android:layout_marginLeft="31dp"
             android:layout_marginTop="14dp"
-            android:src="@drawable/resim" />
+            android:src="@drawable/be_my_eyes" />
 
         <TextView
             android:id="@+id/txtGormeEngelli"
@@ -101,7 +102,7 @@
         android:layout_marginEnd="15dp"
         android:background="@drawable/kenarlik"
         android:padding="15dp"
-        android:text="Gozlerini Benimle Paylas görme engelli bireyler için geliştirilmiş bir sosyal yardım platformudur."
+        android:text="Gözlerini Benimle Paylaş görme engelli bireyler için geliştirilmiş bir sosyal yardım platformudur."
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

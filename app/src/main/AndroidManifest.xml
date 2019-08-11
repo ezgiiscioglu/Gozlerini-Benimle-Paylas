@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lenovo.myapplication">
-<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera"></uses-feature>
+    <uses-feature android:name="android.hardware.camera"/>
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ar"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ar"
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
@@ -25,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Video"
+            android:label="Video Gönder"/>
         <activity android:name=".KayitOlGonullu"
             android:label="Kayıt Ol"/>
         <activity android:name=".KayitOlGormeEngelli"
@@ -38,11 +41,14 @@
         <activity android:name=".GormeEngelliAnaEkrani"
             android:label="Görme Engelli Ana Ekranı" />
 
-        <activity android:name=".GormeEngelliKullaniciEkrani"
+        <activity android:name=".GormeEngelliKullanici"
             android:label="Görme Engelli Kullanıcı Ekranı" />
 
         <activity android:name=".ProfilDuzenlemeEkrani"
             android:label="Profili Düzenle"/>
+
+        <activity android:name=".YardimEt"
+            android:label="Yardım Et"/>
         <activity
             android:name=".NavigationBar"
             android:label="Gönüllü Kullanici Ekrani"></activity>

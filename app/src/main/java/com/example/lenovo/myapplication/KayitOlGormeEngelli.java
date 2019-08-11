@@ -7,7 +7,11 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.NavUtils;
+
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,9 +33,12 @@ private DatabaseReference mDatabase;
     Button btnKayitOl;
     Context context;
     ProgressDialog kayitProgress;
+    CardView cardView;
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kayit_ol_gonullu);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mAuth = FirebaseAuth.getInstance();
         btnKayitOl=(Button)findViewById(R.id.btnKayitOl) ;
@@ -39,6 +46,8 @@ private DatabaseReference mDatabase;
         etSoyad=(EditText)findViewById(R.id.etSoyad);
         etEmail = (EditText)findViewById(R.id.etEmail);
         etSifre = (EditText)findViewById(R.id.etSifre);
+        cardView=(CardView) findViewById(R.id.card_view);
+        cardView.setBackgroundResource(R.drawable.purple);
         kayitProgress=new ProgressDialog(this);
 
         btnKayitOl.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +111,15 @@ private DatabaseReference mDatabase;
 
                     }
                 });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), GormeEngelliAnaEkrani.class);
+            NavUtils.navigateUpTo(this, intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
