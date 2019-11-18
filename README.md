@@ -24,31 +24,37 @@ Gönüllü bireyler, Ayarlar sekmesindeki Profil Ayarları bölümünden profil 
 
 [![uml.png](https://i.postimg.cc/508X7dgp/uml.png)](https://postimg.cc/njcVrW6Q)  
 
-Şekil 2. Diyagram ile Kullanıcılarla Veritabanı İlişkisi   
-[![as.png](https://i.postimg.cc/9QN1VZhK/as.png)](https://postimg.cc/hXTV1Jh1)  
+Şekil 2. Diyagram ile Kullanıcılarla Veritabanı İlişkisi    
+
+[![as.png](https://i.postimg.cc/9QN1VZhK/as.png)](https://postimg.cc/hXTV1Jh1)    
 Şekil 3. Use-Case Diyagramı Gösterimi  
 
 ## Uygulama Tasarımı  
 
 ### Giriş Ekranı  
 Uygulama 2 tip kullanıcıya hitap etmektedir; görme engelli bireyler ve gönüllü bireyler.  
-[![giris-Ekrani.jpg](https://i.postimg.cc/4dvSJywc/giris-Ekrani.jpg)](https://postimg.cc/9RMpbW6X)   
+
+[![giris-Ekrani.jpg](https://i.postimg.cc/qvpvVcx2/giris-Ekrani.jpg)](https://postimg.cc/KRs2tMVY)
 
 ### Görme Engelli Kullanıcı Ekranı  
 Görme engelli kullanıcılar, sayfadaki  buton  sayesinde video çekebilirler veya kaydettikleri ses kaydını dinleyebilirler.  
+
 [![video.png](https://i.postimg.cc/mkZ8nQzh/video.png)](https://postimg.cc/PpcWpvMk)
 
 ### Görme Engelli Kullanıcı Video Yükleme Ekranı   
 Kullanıcılar çektikleri videoyu sisteme yüklerler.  
-[![kopya2.jpg](https://i.postimg.cc/2yDc656L/kopya2.jpg)](https://postimg.cc/LYxBQ2jm)
+
+[![kopya2.jpg](https://i.postimg.cc/xTZVgKF0/kopya2.jpg)](https://postimg.cc/QHczdW3P)
 
 ### Gönüllü Yardım Ekranı  
+
 Görme engelli bireyler tarafından yüklenen tüm videolar gönüllü bireyin yardım sayfasında listelenir.Kullanıcı yardım etmek istediği videonun butonuna tıklayarak videodaki probleme ses kaydederek yanıt verir.  
-[![g-n-ll.png](https://i.postimg.cc/T2y9KYVz/g-n-ll.png)](https://postimg.cc/3WTp6hb1)  
+[![g-n-ll.png](https://i.postimg.cc/T2y9KYVz/g-n-ll.png)](https://postimg.cc/3WTp6hb1)   
 
 ### Gönüllü  Ses Kayıt Ekranı  
+
 Gönüllü kullanıcılar yardım etmek istedikleri video için ses kaydederler.Bu kayıtlar sisteme yüklenir ve görme engelli bireye ulaştırılır.Bu sayede iletişim gerçekleşmiş ve görme engelli bireyin problemine çözüm bulunmuş olur.  
-[![yardim.png](https://i.postimg.cc/X7cBwC7h/yardim.png)](https://postimg.cc/Cz5K0d8H) 
+[![yardim.png](https://i.postimg.cc/X7cBwC7h/yardim.png)](https://postimg.cc/Cz5K0d8H)
 
 
 
