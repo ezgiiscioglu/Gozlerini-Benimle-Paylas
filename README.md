@@ -1,7 +1,7 @@
 # Gözlerini Benimle Paylaş
-Görme engelli bireyler için en büyük sorunlardan birisi teknolojileri nasıl kullanabilecekleri ya da gelişen teknolojinin bu kişilere ne gibi yenilikler sunduğudur. “Gözlerini Benimle Paylaş”, görme engelli bireylerin hayatını kolaylaştırmayı amaçlayan bir Android uygulamadır. Uygulamanın aktif bir toplu yaşam alanında kullanılabileceği düşünülürse görme engelli kullanıcılar için büyük bir kolaylık sağlanacaktır. 
-Uygulamada, görme engelli bireyler görmekte zorlandıkları veya göremedikleri nesneler için uygulama üzerinden video çekerek yardım talebinde bulunabilirler. Bu yardım isteği ilk mevcut gönüllü olan bireye ulaştırılarak görme engelli bireyin sorunu üzerine, gönüllü kişinin ses mesajı göndererek yardım etmesi ile sağlanacaktır. Böylece onların yaşamını daha bağımsız hale getirmek amaçlanır. Bireyler günün her saatinde her yerden yardım isteyebilirler.  
-Android uygulaması Java dilinde yazılmış olup, uygulamada tüm kullanıcı verileri , çekilen video ve ses kayıtları Google Firebase veri tabanı sistemine kayıt edilmektedir. Veritabanı işlemleri Firebase üzerindeki “Realtime Database” , resim ve video işlemleri ise “Storage” ile gerçekleştirilecektir.   
+Görme engelli bireyler için en büyük sorunlardan birisi teknolojileri nasıl kullanabilecekleri ya da gelişen teknolojinin bu kişilere ne gibi yenilikler sunduğudur. “Gözlerini Benimle Paylaş”, görme engelli bireylerin hayatını kolaylaştırmayı amaçlayan bir Android uygulamadır. Uygulamanın aktif bir toplu yaşam alanında kullanılabileceği düşünülürse görme engelli kullanıcılar için büyük bir kolaylık sağlanacaktır.   
+Uygulamada, görme engelli bireyler görmekte zorlandıkları veya göremedikleri nesneler için uygulama üzerinden video çekerek yardım talebinde bulunabilirler. Bu yardım isteği ilk mevcut gönüllü olan bireye ulaştırılarak görme engelli bireyin sorunu üzerine, gönüllü kişinin ses mesajı göndererek yardım etmesi ile sağlanacaktır. Böylece onların yaşamını daha bağımsız hale getirmek amaçlanır. Bireyler günün her saatinde her yerden yardım isteyebilirler.    
+Android uygulaması Java dilinde yazılmış olup, uygulamada tüm kullanıcı verileri , çekilen video ve ses kayıtları Google Firebase veri tabanı sistemine kayıt edilmektedir. Veritabanı işlemleri Firebase üzerindeki “Realtime Database” , resim ve video işlemleri ise “Storage” ile gerçekleştirilecektir.     
 
 ## Uygulama Tanıtımı  
 Uygulamada 2 tip kullanıcı vardır.
@@ -54,6 +54,7 @@ Görme engelli bireyler tarafından yüklenen tüm videolar gönüllü bireyin y
 ### Gönüllü  Ses Kayıt Ekranı  
 
 Gönüllü kullanıcılar yardım etmek istedikleri video için ses kaydederler.Bu kayıtlar sisteme yüklenir ve görme engelli bireye ulaştırılır.Bu sayede iletişim gerçekleşmiş ve görme engelli bireyin problemine çözüm bulunmuş olur.  
+
 [![yardim.png](https://i.postimg.cc/X7cBwC7h/yardim.png)](https://postimg.cc/Cz5K0d8H)
 
 
