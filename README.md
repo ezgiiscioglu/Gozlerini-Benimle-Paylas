@@ -17,32 +17,36 @@ Gönüllü bireyler anasayfasında  sistemde kayıtlı olan tüm videoları gör
 
 Gönüllü bireyler, Ayarlar sekmesindeki Profil Ayarları bölümünden profil bilgilerini güncelleyebilirler. Aynı zamanda profil fotoğrafı ekleyip fotoğrafı değiştirebilirler. 
 
-## Sistematik Yaklaşım
+## Sistematik Yaklaşım  
 [![usecase.png](https://i.postimg.cc/qMy1sz2C/usecase.png)](https://postimg.cc/mtZ3RZXb)  
 Şekil 1. Use-Case Diyagramı ile Kullanıcıların Gösterimi  
 
 [![uml.png](https://i.postimg.cc/508X7dgp/uml.png)](https://postimg.cc/njcVrW6Q)  
 Şekil 2. Diyagram ile Kullanıcılarla Veritabanı İlişkisi  
-[![as.png](https://i.postimg.cc/9QN1VZhK/as.png)](https://postimg.cc/hXTV1Jh1) Şekil 3. Use-Case Diyagramı Gösterimi
 
-## Uygulama Tasarımı
-### Giriş Ekranı
-[![giris-Ekrani.jpg](https://i.postimg.cc/4dvSJywc/giris-Ekrani.jpg)](https://postimg.cc/9RMpbW6X | width=100)   
+[![as.png](https://i.postimg.cc/9QN1VZhK/as.png)](https://postimg.cc/hXTV1Jh1) 
+Şekil 3. Use-Case Diyagramı Gösterimi
+
+## Uygulama Tasarımı  
+
+### Giriş Ekranı  
+[![giris-Ekrani.jpg](https://i.postimg.cc/4dvSJywc/giris-Ekrani.jpg | width=100)](https://postimg.cc/9RMpbW6X | width=100)   
 Uygulama 2 tip kullanıcıya hitap etmektedir; görme engelli bireyler ve gönüllü bireyler.
+
 ### Görme Engelli Kullanıcı Ekranı
-[![video.png](https://i.postimg.cc/mkZ8nQzh/video.png)](https://postimg.cc/PpcWpvMk  | width=100)
+[![video.png](https://i.postimg.cc/mkZ8nQzh/video.png | width=100)](https://postimg.cc/PpcWpvMk)
 Görme engelli kullanıcılar, sayfadaki  buton  sayesinde video çekebilirler veya kaydettikleri ses kaydını dinleyebilirler.
 
 ### Görme Engelli Kullanıcı Video Yükleme Ekranı   
-[![kopya2.jpg](https://i.postimg.cc/bJq7M4jp/kopya2.jpg)](https://postimg.cc/WDfYqW3H | width=100)   
+[![kopya2.jpg](https://i.postimg.cc/bJq7M4jp/kopya2.jpg | width=100)](https://postimg.cc/WDfYqW3H)   
 Kullanıcılar çektikleri videoyu sisteme yüklerler.
 
 ### Gönüllü Yardım Ekranı
-[![g-n-ll.png](https://i.postimg.cc/T2y9KYVz/g-n-ll.png)](https://postimg.cc/3WTp6hb1 | width=100)  
+[![g-n-ll.png](https://i.postimg.cc/T2y9KYVz/g-n-ll.png | width=100)](https://postimg.cc/3WTp6hb1)  
 Görme engelli bireyler tarafından yüklenen tüm videolar gönüllü bireyin yardım sayfasında listelenir.Kullanıcı yardım etmek istediği videonun butonuna tıklayarak videodaki probleme ses kaydederek yanıt verir.
 
 ### Gönüllü  Ses Kayıt Ekranı
-[![yardim.png](https://i.postimg.cc/X7cBwC7h/yardim.png)](https://postimg.cc/Cz5K0d8H | width=100)  
+[![yardim.png](https://i.postimg.cc/X7cBwC7h/yardim.png | width=100)](https://postimg.cc/Cz5K0d8H)  
 Gönüllü kullanıcılar yardım etmek istedikleri video için ses kaydederler.Bu kayıtlar sisteme yüklenir ve görme engelli bireye ulaştırılır.Bu sayede iletişim gerçekleşmiş ve görme engelli bireyin problemine çözüm bulunmuş olur.
 
 
